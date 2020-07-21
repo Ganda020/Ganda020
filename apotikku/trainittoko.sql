@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 21, 2020 at 06:57 AM
+-- Generation Time: Jul 21, 2020 at 08:23 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.5
 
@@ -40,71 +40,6 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`id_admin`, `username`, `password`, `nama_lengkap`) VALUES
 (1, 'gandadirga', 'gandadirga', 'ganda dirgantara');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pelanggan`
---
-
-CREATE TABLE `pelanggan` (
-  `id_pelanggan` int(11) NOT NULL,
-  `email_pelanggan` varchar(100) NOT NULL,
-  `password_pelanggan` varchar(50) NOT NULL,
-  `nama_pelanggan` varchar(100) NOT NULL,
-  `telepon_pelanggan` varchar(25) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `pelanggan`
---
-
-INSERT INTO `pelanggan` (`id_pelanggan`, `email_pelanggan`, `password_pelanggan`, `nama_pelanggan`, `telepon_pelanggan`) VALUES
-(1, 'gardhacan1@gmail.com', 'Gardha', 'GardhaChandra', '081232234422'),
-(2, 'gandadirga2@gmail.com', 'Ganda', 'Ganda dirga', '081209807667'),
-(5, 'gandadirga211@gmail.com', '12345678', 'ganda dirgantara', '234346645765');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pembelian`
---
-
-CREATE TABLE `pembelian` (
-  `id_pembelian` int(11) NOT NULL,
-  `id_pelanggan` int(11) NOT NULL,
-  `tanggal_pembelian` date NOT NULL,
-  `total_pembelian` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `pembelian`
---
-
-INSERT INTO `pembelian` (`id_pembelian`, `id_pelanggan`, `tanggal_pembelian`, `total_pembelian`) VALUES
-(1, 1, '2020-05-01', 1000000),
-(2, 1, '2020-05-21', 2000000);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pembelian_produk`
---
-
-CREATE TABLE `pembelian_produk` (
-  `id_pembelian_produk` int(11) NOT NULL,
-  `id_pembelian` int(11) NOT NULL,
-  `id_produk` int(11) NOT NULL,
-  `jumlah` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `pembelian_produk`
---
-
-INSERT INTO `pembelian_produk` (`id_pembelian_produk`, `id_pembelian`, `id_produk`, `jumlah`) VALUES
-(1, 1, 1, 1),
-(2, 1, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -146,24 +81,6 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
--- Indexes for table `pelanggan`
---
-ALTER TABLE `pelanggan`
-  ADD PRIMARY KEY (`id_pelanggan`);
-
---
--- Indexes for table `pembelian`
---
-ALTER TABLE `pembelian`
-  ADD PRIMARY KEY (`id_pembelian`);
-
---
--- Indexes for table `pembelian_produk`
---
-ALTER TABLE `pembelian_produk`
-  ADD PRIMARY KEY (`id_pembelian_produk`);
-
---
 -- Indexes for table `produk`
 --
 ALTER TABLE `produk`
@@ -178,24 +95,6 @@ ALTER TABLE `produk`
 --
 ALTER TABLE `admin`
   MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `pelanggan`
---
-ALTER TABLE `pelanggan`
-  MODIFY `id_pelanggan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT for table `pembelian`
---
-ALTER TABLE `pembelian`
-  MODIFY `id_pembelian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `pembelian_produk`
---
-ALTER TABLE `pembelian_produk`
-  MODIFY `id_pembelian_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `produk`
