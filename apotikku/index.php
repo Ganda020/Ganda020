@@ -1,8 +1,7 @@
 <?php 
 session_start();
 $koneksi= new mysqli("localhost","root","","trainittoko");
-
- ?>
+?>
 
 
 <!doctype html>
@@ -195,9 +194,6 @@ $koneksi= new mysqli("localhost","root","","trainittoko");
       </div><br>
     </div>
     <!-- promo akhir -->
-
-
-
 
      <!-- Produk awal -->
 
